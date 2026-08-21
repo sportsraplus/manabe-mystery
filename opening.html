@@ -1,0 +1,846 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>4年に1度の祭典 開幕直前殺人事件｜学べるマダミス</title>
+
+  <meta name="description" content="スポーツ好きが集まる大学サークルで起きた殺人事件。設定、日付、名前など、作中に出てくるもの全てが伏線。あなたは事件に隠された本当の真相を見抜けるか。">
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Condensed:wght@400;500;700&display=swap');
+
+    /* =========================
+       BASE
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #090909;
+      color: #eeeeee;
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .header-inner {
+      width: min(1200px, 90%);
+      margin: auto;
+      padding: 28px 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-logo {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .back-link {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      opacity: 0.65;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+
+    /* =========================
+       COMMON
+    ========================= */
+
+    .section {
+      width: min(1100px, 88%);
+      margin: auto;
+      padding: 130px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      margin-bottom: 70px;
+    }
+
+    .section-heading span {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: #666;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .work-hero {
+      min-height: 100vh;
+      padding: 120px 5% 80px;
+
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 8%;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 1px solid #333;
+      z-index: -1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 700px;
+      object-fit: contain;
+    }
+
+    .hero-title {
+      padding-right: 5%;
+    }
+
+    .section-label {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .series-name {
+      margin: 0 0 15px;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: #aaa;
+    }
+
+    .hero-title h1 {
+      margin: 0;
+
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title h1 span {
+      font-size: 0.85em;
+    }
+
+    .hero-copy {
+      margin-top: 45px;
+
+      font-size: 17px;
+      letter-spacing: 0.15em;
+      color: #aaa;
+    }
+
+
+    /* =========================
+       STORY
+    ========================= */
+
+    .story {
+      border-top: 1px solid #202020;
+    }
+
+    .story-content {
+      max-width: 750px;
+      margin: 0 auto;
+
+      font-size: 15px;
+      color: #aaa;
+    }
+
+    .story-content p {
+      margin: 0 0 45px;
+    }
+
+    .story-content .lead {
+      font-size: 22px;
+      line-height: 2;
+      color: #fff;
+    }
+
+    .story-divider {
+      width: 60px;
+      height: 1px;
+      background: #555;
+      margin: 70px 0;
+    }
+
+    .incident {
+      font-size: 24px;
+      line-height: 1.8;
+      color: #ddd;
+    }
+
+    .incident strong {
+      color: #fff;
+      font-size: 1.15em;
+    }
+
+    .incident-detail {
+      color: #777;
+    }
+
+    .question {
+      margin-top: 80px !important;
+
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+
+
+    /* =========================
+       MYSTERY
+    ========================= */
+
+    .mystery {
+      position: relative;
+      width: 100%;
+      max-width: none;
+      overflow: hidden;
+
+      background: #101010;
+      border-top: 1px solid #202020;
+      border-bottom: 1px solid #202020;
+    }
+
+    .mystery-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 100%;
+      text-align: center;
+
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(70px, 14vw, 200px);
+      font-weight: 700;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+
+      color: rgba(255, 255, 255, 0.025);
+      white-space: nowrap;
+    }
+
+    .mystery-inner {
+      position: relative;
+      z-index: 1;
+
+      width: min(1100px, 88%);
+      margin: auto;
+    }
+
+    .mystery-main {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .mystery-lead {
+      margin: 0;
+
+      font-size: 22px;
+      color: #aaa;
+    }
+
+    .mystery-lead.large {
+      margin-top: 10px;
+
+      font-size: clamp(30px, 5vw, 55px);
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    .mystery-line {
+      width: 70px;
+      height: 1px;
+      background: #666;
+      margin: 55px auto;
+    }
+
+    .mystery-text {
+      font-size: 16px;
+      color: #999;
+    }
+
+    .mystery-text strong {
+      color: #fff;
+    }
+
+
+    /* =========================
+       GAME DATA
+    ========================= */
+
+    .game-data {
+      border-bottom: 1px solid #202020;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid #333;
+      border-left: 1px solid #333;
+    }
+
+    .data-item {
+      min-height: 190px;
+      padding: 35px;
+
+      border-right: 1px solid #333;
+      border-bottom: 1px solid #333;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .data-label {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .data-item strong {
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .data-item small {
+      font-size: 13px;
+      color: #777;
+    }
+
+
+    /* =========================
+       PRODUCT
+    ========================= */
+
+    .product-box {
+      border: 1px solid #333;
+      padding: 60px;
+
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      gap: 70px;
+
+      background: #0d0d0d;
+    }
+
+    .product-series {
+      margin: 0 0 10px;
+
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: #666;
+    }
+
+    .product-info h2 {
+      margin: 0 0 30px;
+
+      font-size: 28px;
+      line-height: 1.5;
+    }
+
+    .product-info > p:last-child {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .product-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .product-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px 25px;
+
+      border: 1px solid #444;
+
+      transition: 0.3s;
+    }
+
+    .product-button span {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .product-button small {
+      font-size: 11px;
+      color: #777;
+    }
+
+    .product-button:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    .product-button:hover small {
+      color: #555;
+    }
+
+    .product-button.primary {
+      border-color: #aaa;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .site-footer {
+      padding: 100px 20px 50px;
+
+      text-align: center;
+
+      border-top: 1px solid #202020;
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .site-footer p {
+      margin: 30px 0 45px;
+
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .site-footer > a {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+
+      color: #999;
+    }
+
+    .site-footer small {
+      display: block;
+
+      margin-top: 80px;
+
+      color: #444;
+      font-size: 10px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .header-inner {
+        padding: 20px 0;
+      }
+
+      .work-hero {
+        min-height: auto;
+        padding-top: 110px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 60px;
+      }
+
+      .hero-title {
+        padding-right: 0;
+      }
+
+      .hero-title h1 {
+        font-size: 34px;
+      }
+
+      .hero-copy {
+        margin-top: 30px;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 50px;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+
+      .story-content {
+        font-size: 14px;
+      }
+
+      .story-content .lead {
+        font-size: 19px;
+      }
+
+      .question {
+        font-size: 24px;
+      }
+
+      .mystery-lead.large {
+        font-size: 32px;
+      }
+
+      .mystery-text {
+        font-size: 14px;
+      }
+
+      .data-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .data-item {
+        min-height: 150px;
+        padding: 25px;
+      }
+
+      .product-box {
+        padding: 35px 25px;
+
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .product-info h2 {
+        font-size: 23px;
+      }
+
+      .site-footer {
+        padding-top: 80px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="site-logo">
+        学べるマダミス
+      </a>
+
+      <a href="index.html" class="back-link">
+        ← TOP
+      </a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="work-hero">
+
+      <div class="hero-image">
+        <img
+          src="opening.png"
+          alt="4年に1度の祭典 開幕直前殺人事件">
+      </div>
+
+      <div class="hero-title">
+
+        <div class="section-label">
+          MURDER MYSTERY 01
+        </div>
+
+        <p class="series-name">
+          学べるマダミス
+        </p>
+
+        <h1>
+          4年に1度の祭典<br>
+          <span>開幕直前殺人事件</span>
+        </h1>
+
+        <p class="hero-copy">
+          すべての設定が、伏線だった。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- STORY -->
+    <section class="story section">
+
+      <div class="section-heading">
+        <span>01</span>
+        <h2>STORY</h2>
+      </div>
+
+      <div class="story-content">
+
+        <p class="lead">
+          ここはスポーツ好きが集まる<br>
+          某大学のサークル。
+        </p>
+
+        <p>
+          パリで開催される４年に１度のスポーツ祭典の<br>
+          開会式を間近に控えた2024年7月24日。
+        </p>
+
+        <p>
+          開幕前に語り合おうと合宿にやってきた５人。<br>
+          夜までスポーツを語らいながら楽しく飲んでいたのだが……。
+        </p>
+
+        <div class="story-divider"></div>
+
+        <p class="incident">
+          翌朝、部長のマコトが<br>
+          <strong>死体となって発見される。</strong>
+        </p>
+
+        <p class="incident-detail">
+          顔は苦悶の表情に歪んでいる。
+        </p>
+
+        <p class="question">
+          一体何が起こったのか……。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- MYSTERY -->
+    <section class="mystery section">
+
+      <div class="mystery-background">
+        EVERYTHING<br>
+        IS A CLUE.
+      </div>
+
+      <div class="mystery-inner">
+
+        <div class="section-heading">
+          <span>02</span>
+          <h2>MYSTERY</h2>
+        </div>
+
+        <div class="mystery-main">
+
+          <p class="mystery-lead">
+            設定、日付、名前。
+          </p>
+
+          <p class="mystery-lead large">
+            作中に出てくるもの<br>
+            <strong>全てが伏線。</strong>
+          </p>
+
+          <div class="mystery-line"></div>
+
+          <p class="mystery-text">
+            エンディングで全ての伏線が回収される時、<br>
+            あなたはこの事件に隠された<br>
+            <strong>本当の真相と秘められた仕掛け</strong>を<br>
+            知ることになる。
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GAME DATA -->
+    <section class="game-data section">
+
+      <div class="section-heading">
+        <span>03</span>
+        <h2>GAME DATA</h2>
+      </div>
+
+      <div class="data-grid">
+
+        <div class="data-item">
+          <span class="data-label">PLAYERS</span>
+          <strong>5</strong>
+          <small>人</small>
+        </div>
+
+        <div class="data-item">
+          <span class="data-label">TIME</span>
+          <strong>60</strong>
+          <small>分</small>
+        </div>
+
+        <div class="data-item">
+          <span class="data-label">GM</span>
+          <strong>不要</strong>
+        </div>
+
+        <div class="data-item">
+          <span class="data-label">GENRE</span>
+          <strong>本格推理</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCT -->
+    <section class="product section">
+
+      <div class="section-heading">
+        <span>04</span>
+        <h2>PRODUCT</h2>
+      </div>
+
+      <div class="product-box">
+
+        <div class="product-info">
+
+          <p class="product-series">
+            学べるマダミス
+          </p>
+
+          <h2>
+            4年に1度の祭典<br>
+            開幕直前殺人事件
+          </h2>
+
+          <p>
+            事件の真相を、あなた自身の手で解き明かしてください。
+          </p>
+
+        </div>
+
+        <div class="product-buttons">
+
+          <!-- BOOTHのURLが決まったら href を変更 -->
+          <a href="#" class="product-button primary">
+            <span>PDF版</span>
+            <small>BOOTHで購入</small>
+          </a>
+
+          <!-- BOOTHのURLが決まったら href を変更 -->
+          <a href="#" class="product-button">
+            <span>製品版</span>
+            <small>BOOTHで購入</small>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-logo">
+      学べるマダミス
+    </div>
+
+    <p>
+      「楽しかった」で終わらない。<br>
+      遊んだあと、世界の見え方が少し変わる。
+    </p>
+
+    <a href="index.html">
+      ← BACK TO TOP
+    </a>
+
+    <small>
+      © 学べるマダミス
+    </small>
+
+  </footer>
+
+</body>
+</html>
+```
